@@ -7,14 +7,14 @@
 </head>
 <body>
 <h1 style="text-align: center">
-    <td>{{$data['receipts']->name}}</td>
+    {{$receipt}}
 </h1>
 
 <br>
 <br>
 
 <div style="padding: 20px">
-    <p>Tên hóa đơn: {{$data['receipts']->name}}</p>
+    <p>Tên hóa đơn: {{$receipt }}</p>
     <p>Ngày xuất: {{date("d/m/Y")}}</p>
     <p>Người xuất: {{Auth::user()->name}}</p>
 </div>
@@ -28,20 +28,17 @@
         </tr>
         </thead>
         <tbody>
-        @if (count($data['products']) > 0)
-            <tr>
-                <td style="text-align: center">{{$data['products']->code}}</td>
-                <td>{{$data['products']->name}}</td>
-                <td style="text-align: center">{{number_format($data['products']->price)}} VND</td>
-            </tr>
-        @endif
+        <tr>
+            <td style="text-align: center">{{@$product->code}}</td>
+            <td>{{@$product->name}}</td>
+            <td style="text-align: center">{{number_format(@$product->price)}} VND</td>
+        </tr>
         </tbody>
     </table>
-
-    <div class="col-md-9">
-
-    </div>
-    <div class="col-md-3">
+    <p style="float: right; padding: 20px"> Tổng tiền: {{number_format(@$product->price)}} VND</p>
+    <br>
+    <br>
+    <div style="float: right">
         <p> Người tạo</p>
         <br>
         <p> {{Auth::user()->name}}</p>

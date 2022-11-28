@@ -65,8 +65,6 @@ class HomeController extends Controller
         $receipt = Receipt::find($id);
         $product = DB::table('products')->find($receipt->product_id);
 
-        $data['receipt'] = $receipt;
-        $data['receipt'] = $product;
 //        $pdf = PDF::loadView('tcpdf', $data);
 //        return $pdf->download('myPDF.pdf');
 
@@ -83,9 +81,11 @@ class HomeController extends Controller
         PDF::SetTitle('Hóa đơn '. $receipt->code);
         PDF::AddPage();
 
-        $text = view('tcpdf');
+        $text = view('tcpdf',
+            ['receipt' => $receipt->name, 'product' => $product]);
+//        dd($text);
         PDF::writeHTML($text, true, 0, true, 0);
-//        PDF::Image('tcpdf.png', 180, 60, 15, 15, 'PNG');
+        PDF::Image('tcpdf.png', 180, 60, 15, 15, 'PNG');
 
         PDF::setSignatureAppearance(180, 60, 15, 15);
 
