@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hóa đơn</title>
+    <title>Hoa Don</title>
 </head>
 <body>
 <h1 style="text-align: center">
@@ -14,17 +14,17 @@
 <br>
 
 <div style="padding: 20px">
-    <p>Tên hóa đơn: {{$receipt }}</p>
-    <p>Ngày xuất: {{date("d/m/Y")}}</p>
-    <p>Người xuất: {{Auth::user()->name}}</p>
+    <p>Ten hoa don: {{$receipt }}</p>
+    <p>Ngay xuat: {{date("d/m/Y")}}</p>
+    <p>Nguoi xuat: {{Auth::user()->name}}</p>
 </div>
 <div class="table-responsive">
     <table class="table">
         <thead>
         <tr class="bg-blue">
-            <th style="text-align: center">Mã sản phẩm</th>
-            <th>Tên sản phẩm</th>
-            <th style="text-align: center">Giá</th>
+            <th style="text-align: center">Ma san pham</th>
+            <th>Ten san pham</th>
+            <th style="text-align: center">Gia</th>
         </tr>
         </thead>
         <tbody>
@@ -35,14 +35,7 @@
         </tr>
         </tbody>
     </table>
-    <p style="float: right; padding: 20px"> Tổng tiền: {{number_format(@$product->price)}} VND</p>
-    <br>
-    <br>
-    <div style="float: right">
-        <p> Người tạo</p>
-        <br>
-        <p> {{Auth::user()->name}}</p>
-    </div>
+    <p style="float: right; padding: 20px"> Tong tien: {{number_format(@$product->price)}} VND</p>
 </div>
 </body>
 </html>

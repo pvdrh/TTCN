@@ -77,22 +77,22 @@ class HomeController extends Controller
         );
 
         PDF::setSignature($certificate, $certificate, 'tcpdfdemo', '', 2, $info);
-        PDF::SetFont('helvetica', '', 12);
+        PDF::SetFont('Courier', '', 12);
         PDF::SetTitle('Hóa đơn '. $receipt->code);
         PDF::AddPage();
 
         $text = view('tcpdf',
             ['receipt' => $receipt->name, 'product' => $product]);
-//        dd($text);
         PDF::writeHTML($text, true, 0, true, 0);
         PDF::Image('tcpdf.png', 180, 60, 15, 15, 'PNG');
 
         PDF::setSignatureAppearance(180, 60, 15, 15);
 
-        PDF::Output(public_path('hello_world.pdf'), 'F');
+        PDF::Output(public_path('Hoadon'.$receipt->code.'.pdf'), 'F');
 
         PDF::reset();
 
-
+        $file = public_path() . '/Hoadon'.$receipt->code.'.pdf';
+        return response()->download($file, 'Hoa-don.pdf');
     }
 }

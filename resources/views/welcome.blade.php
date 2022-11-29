@@ -189,7 +189,7 @@
                                         <td>{{$receipt->name}}</td>
                                         <td style="text-align: center">{{$receipt->created_at}}</td>
                                         <td style="text-align: center">{{$receipt->created_by}}</td>
-                                        <td style="text-align: center"><a class="btn btn-info" href="{{route('export', $receipt->id)}}">Xuất PDF</a></td>
+                                        <td style="text-align: center"><a class="btn btn-info" href="{{route('export', $receipt->id)}}">Xuất hóa đơn</a></td>
                                     </tr>
                                         @endforeach
                                     @endif
