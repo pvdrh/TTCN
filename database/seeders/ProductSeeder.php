@@ -16,7 +16,7 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             'code' => 'SP0001',
-            'name' => 'Điện thoại iPhone 14 Pro 128GB ',
+            'name' => 'Dien thoai iPhone 14 Pro 128GB ',
             'price' => '30490000',
         ]);
         DB::table('products')->insert([
@@ -31,27 +31,27 @@ class ProductSeeder extends Seeder
         ]);
         DB::table('products')->insert([
             'code' => 'SP0004',
-            'name' => 'Điện thoại iPhone 14 Pro 128GB ',
+            'name' => 'Dien thoai iPhone 14 Pro 128GB ',
             'price' => 30490000,
         ]);
         DB::table('products')->insert([
             'code' => 'SP0005',
-            'name' => 'Cáp Type C - Type C 20cm Xmobile TCC04-200',
+            'name' => 'Cap Type C - Type C 20cm Xmobile TCC04-200',
             'price' => '70000',
         ]);
         DB::table('products')->insert([
             'code' => 'SP0006',
-            'name' => 'Điện thoại iPhone 13 mini 512GB',
+            'name' => 'Dien thoai iPhone 13 mini 512GB',
             'price' => '21990000',
         ]);
         DB::table('products')->insert([
             'code' => 'SP0007',
-            'name' => 'Adapter chuyển đổi Type C - Gigabit Ethernet Belkin INC001 Đen',
+            'name' => 'Adapter chuyen doi Type C - Gigabit Ethernet Belkin INC001 Đen',
             'price' => '495000',
         ]);
         DB::table('products')->insert([
             'code' => 'SP0008',
-            'name' => 'Điện thoại iPhone 12 64GB',
+            'name' => 'Dien thoai iPhone 12 64GB',
             'price' => '16490000',
         ]);
     }

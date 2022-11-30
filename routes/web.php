@@ -12,12 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('index');
-Route::post('/store', [\App\Http\Controllers\HomeController::class, 'store'])->name('store');
-Route::any('/export/{id}', [\App\Http\Controllers\HomeController::class, 'export'])->name('export');
-
-
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('index');
+    Route::post('/store', [\App\Http\Controllers\HomeController::class, 'store'])->name('store');
+    Route::any('/export/{id}', [\App\Http\Controllers\HomeController::class, 'export'])->name('export');
+});
 Route::get('/login', function () {
     return view('login');
 })->name('login.form');
