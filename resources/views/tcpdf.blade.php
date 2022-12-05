@@ -6,7 +6,7 @@
     <title>Hoa Don</title>
 </head>
 <body>
-<h1 style="text-align: center">
+<h1 style="text-align: center; font-weight: bold">
     {{$receipt}}
 </h1>
 
@@ -14,17 +14,17 @@
 <br>
 
 <div style="padding: 20px">
-    <p>Ten hoa don: {{$receipt }}</p>
-    <p>Ngay xuat: {{date("d/m/Y")}}</p>
-    <p>Nguoi xuat: {{Auth::user()->name}}</p>
+    <p><b>Ten hoa don:</b> {{$receipt }}</p>
+    <p><b>Ngay xuat:</b> {{date("d/m/Y")}}</p>
+    <p><b>Nguoi xuat:</b> {{Auth::user()->name}}</p>
 </div>
 <div class="table-responsive">
     <table class="table">
         <thead>
         <tr class="bg-blue">
-            <th style="text-align: center">Ma san pham</th>
-            <th>Ten san pham</th>
-            <th style="text-align: center">Gia</th>
+            <th style="text-align: center"><b>Ma san pham</b></th>
+            <th><b>Ten san pham</b></th>
+            <th style="text-align: center"><b>Gia</b></th>
         </tr>
         </thead>
         <tbody>
@@ -35,7 +35,7 @@
         </tr>
         </tbody>
     </table>
-    <p style="float: right; padding: 20px"> Tong tien: {{number_format(@$product->price)}} VND</p>
+    <p style="float: right; padding: 20px; font-weight: bold"> Tong tien: {{number_format(@$product->price)}} VND</p>
 </div>
 </body>
 </html>
